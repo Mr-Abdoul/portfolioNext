@@ -22,7 +22,7 @@ const HeroSection = () => {
                             1000,
                             'Mobile Developer',
                             1000,
-                            'Married',
+                            'Designer',
                             1000
                         ]}
                         wrapper="span"
@@ -45,12 +45,12 @@ const HeroSection = () => {
                 </div>
                 </div>
                 <div className="col-span-5 place-self-center mt-4 lg:mt-0">
-                <div className='rounded-full bg-[#181818] w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] relative'>
+                <div className='rounded bg-[#181818] w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] relative'>
                 <Image
-                        src="/images/moccy.jpg"
+                        src="/images/abdoul1.jpg"
                         width={300}
                         height={300}
-                        className='absolute translate -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+                        className='absolute translate  rounded -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
                         alt="S'affiche quand l'image n'est pas disponible"
                     />
                 </div>

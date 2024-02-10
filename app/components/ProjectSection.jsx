@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
 import ProjectTag from './ProjectTag';
+import TabButton from './TabButton';
 
 
 const projectData = [
@@ -74,8 +75,8 @@ const ProjectSection = () => {
 
   return (
     <>
-    <h2>My Projects </h2> 
-    <div className='text-white flex flex-row justify-center items-center grap-2 py-6'>
+    <h1 id='project' className='text-4xl font-blod text-white mb-4'>My Projects </h1> 
+    <div  className='text-white flex flex-row justify-center items-center grap-2 py-6'>
         <ProjectTag 
             onClick={handelTagChange} 
             name="All" 
