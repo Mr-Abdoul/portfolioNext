@@ -42,10 +42,10 @@ return (
   <section id='contact' className='grid md:grid-cols-2 my-2 md:my-2 py-24 gap-4'>
     <div>
       <h1 className='text-4xl font-blod text-white mb-12'>Contact Me</h1>
-      <h5 className='text-xl font-bold text-white my-2 '>  Let's Connect</h5>
+      <h5 className='text-xl font-bold text-white my-2 '>  Let Connect</h5>
       <p className='text-[#ADB7BE] mb-4max-w-md'>
         {""}
-        I'm currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+        I am currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I will try my best to get back to you!
       </p>
       <div className='socials flex flex-row gap-2'>
         <Link href={"github.com"}>
