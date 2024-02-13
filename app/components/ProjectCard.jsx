@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
   const img = require(`../../public${imgUrl}`);
-  console.log({ img });
+ 
   return (
     <>
       <div>
