@@ -47,7 +47,7 @@ export async function POST(req, res) {
       { status: 200, statusText: "success" }
     );
   } else
-    NextResponse.json(
+    return NextResponse.json(
       { success: false, message: "Server Error" },
       { status: 500, statusText: "an error occured" }
     );
