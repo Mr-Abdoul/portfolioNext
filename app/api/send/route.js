@@ -42,12 +42,12 @@ export async function POST(req, res) {
     req.body.subject
   );
   if (emailSend) {
-    return res.json(
+    return res.status(200).json(
       { success: true, message: "Envoyé avec succès" },
       { status: 200, statusText: "success" }
     );
   } else
-    return res.json(
+    return res.status(500).json(
       { success: false, message: "Server Error" },
       { status: 500, statusText: "an error occured" }
     );
