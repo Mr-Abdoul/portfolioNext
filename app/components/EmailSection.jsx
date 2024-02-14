@@ -57,14 +57,13 @@ const EmailSection = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault()
 
-   
+
 
     let data = {
       message,
       email,
       subject,
     }
-    console.log(data)
     fetch('/api/send', {
       method: 'POST',
       headers: {
@@ -73,7 +72,9 @@ const EmailSection = () => {
       },
       body: JSON.stringify(data)
     })
-      .then(response => response.json())
+      .then(response => {
+        return response.json()
+      })
       .then(() => {
         // Réinitialisez les champs du formulaire après la soumission réussie
         setEmail('');
@@ -81,9 +82,11 @@ const EmailSection = () => {
         setMessage('');
       })
       .catch(error => {
-        console.error('Error submitting the form:', error);
+        console.log('Error submitting the form:', error);
       });
+
   }
+
 
   return (
     <section id='contact' className='grid md:grid-cols-2 my-2 md:my-2 py-24 gap-4'>

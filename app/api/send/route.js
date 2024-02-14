@@ -23,7 +23,6 @@ const sendEmail = async (message, email, subject) => {
 
   try {
     const emailSent = await transporter.sendMail(mailData);
-    console.log(emailSent);
     if (emailSent) return true;
   } catch (error) {
     console.log(error);
@@ -32,22 +31,18 @@ const sendEmail = async (message, email, subject) => {
 };
 
 export async function POST(req, res) {
-  // console.log( {
-  //   user: process.env.EMAIL,
-  //   pass: process.env.EMAIL_PASS,
-  // });
   const emailSend = await sendEmail(
     req.body.message,
     req.body.email,
     req.body.subject
   );
   if (emailSend) {
-    return res.status(200).json(
+    return NextResponse.json(
       { success: true, message: "Envoyé avec succès" },
       { status: 200, statusText: "success" }
     );
   } else
-    return res.status(500).json(
+    return NextResponse.json(
       { success: false, message: "Server Error" },
       { status: 500, statusText: "an error occured" }
     );
