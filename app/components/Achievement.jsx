@@ -33,7 +33,7 @@ const achievementsList = [
 const Achievement = () => {
   return (
     <div className='py-8 px-4 xl:gap-16 sm:py-16 xl:px-16'>
-      <div className='border-[#33353F] border rounded-md py-6 px-17 flex flex-row items-center justify-between'>
+      <div className='border-[#33353F] border rounded-md py-6 px-17 flex flex-col md:flex-row  items-center justify-between'>
           {achievementsList.map((achivement, index) =>{
             return(
               <div key={index} className='flex flex-col items-center justify-center mx-4 my-4 sm:my-0'>

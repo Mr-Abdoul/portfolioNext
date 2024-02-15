@@ -50,20 +50,26 @@ import { useForm } from '@formspree/react';
 
 const EmailSection = () => {
 
-  const [email, setEmail] = useState('')
-  const [subject, setSubject] = useState('')
-  const [message, setMessage] = useState('')
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+
+  const isFormValid = email && subject && message;
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
 
-
+    if (!isFormValid) {
+      console.error('Veuillez remplir tous les champs du formulaire.');
+      return;
+    }
 
     let data = {
-      message,
-      email,
-      subject,
-    }
+      message: message, // ou simplement message
+      email: email,
+      subject: subject,
+    };
+    
     fetch('/api/send', {
       method: 'POST',
       headers: {
@@ -82,7 +88,7 @@ const EmailSection = () => {
         setMessage('');
       })
       .catch(error => {
-        console.log('Error submitting the form:', error);
+        console.error('Error submitting the form:', error);
       });
 
   }
@@ -114,7 +120,7 @@ const EmailSection = () => {
             onChange={(e) => { setEmail(e.target.value) }}
             name="email" id="email"
             className='bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
-            placeholder='abdoulaye@gmail.com'
+            placeholder='Enter your email@gmail.com'
           />
         </div>
         <div className='mb-6'>
@@ -144,7 +150,8 @@ const EmailSection = () => {
         </div>
         <button
           type='submit'
-          className='bg-primary-500 hover:bg-primary-700 text-white font-medium py-2.5 rounded-lg w-full'>
+          className='bg-primary-500 hover:bg-primary-700 text-white font-medium py-2.5 rounded-lg w-full'
+          disabled={!isFormValid}>
           Send Message
         </button>
         {false && (
