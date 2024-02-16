@@ -14,7 +14,7 @@ const sendEmail = async (message, email, subject) => {
 
   const mailData = {
     from: process.env.EMAIL,
-    to: process.env.EMAIL,
+    to: email,
     subject: `Message From ${message}`,
     text: subject + " | Sent from: " + email,
     html: `<div>${subject}</div><p>Sent from:
