@@ -14,16 +14,15 @@ const sendEmail = async (message, email, subject) => {
   });
 
   const mailData = {
-    from: process.env.EMAIL,
+    from: email,
     to: process.env.EMAIL,
-    subject: `Message From ${message}`,
+    subject: `Message From ${email}`,
     text: subject + " | Sent from: " + email,
-    html: `<div>${subject}</div><p>Sent from:
-    ${email}</p>`,
+    html: `<div>${subject}</div><p>Sent from:${email}</p>
+    <div>${message}<id/>`,
   };
 
-  console.log(mailData);
-
+ 
   try {
     const emailSent = await transporter.sendMail(mailData);
     if (emailSent) return true;
@@ -34,10 +33,11 @@ const sendEmail = async (message, email, subject) => {
 };
 
 export async function POST(req, res) {
+  const data  =await req.json()
   const emailSend = await sendEmail(
-    req.body.message,
-    req.body.email,
-    req.body.subject
+    data.message,
+    data.email,
+    data.subject
   );
   if (emailSend) {
     return NextResponse.json(

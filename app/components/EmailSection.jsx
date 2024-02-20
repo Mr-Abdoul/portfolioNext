@@ -52,6 +52,7 @@ const EmailSection = () => {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [formStatus, setFormStatus] = useState(null);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   const isFormValid = email && subject && message;
 
@@ -62,6 +63,8 @@ const EmailSection = () => {
       setFormStatus('Veuillez remplir tous les champs du formulaire.');
       
     }
+
+    setIsButtonDisabled(true);
 
     let data = {
       message: message, // ou simplement message
@@ -88,11 +91,15 @@ const EmailSection = () => {
         setMessage('');
       })
       .catch(error => {
-        setFormStatus('Message envoyé avec succès!');
+        setFormStatus('Erreur lors de l\'envoi du formulaire.');
         console.error('Error submitting the form:', error);
+      })
+      .finally(() => {
+        setIsButtonDisabled(false);
+       
       });
 
-  }
+  };
 
 
   return (
@@ -151,10 +158,10 @@ const EmailSection = () => {
         <button
           type='submit'
           className='bg-primary-500 hover:bg-primary-700 text-white font-medium py-2.5 rounded-lg w-full'
-          disabled={!isFormValid}>
+          disabled={!isFormValid || isButtonDisabled}>
           Send Message
         </button>
-        {formStatus && <p>{formStatus}</p>}
+        {formStatus && <p style={{ color: formStatus.includes('succès') ? 'green' : 'red' }}>{formStatus}</p>}
           {/* <p className='text-secondary-500 text-sm mt-2'>
             Email sent successfully
           </p> */}
