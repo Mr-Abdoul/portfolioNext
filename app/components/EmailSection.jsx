@@ -168,6 +168,6 @@ const EmailSection = () => {
       </form>
     </section>
   )
-}
+};
 
 export default EmailSection
