@@ -1,7 +1,5 @@
 "use client"
 import React, { useState } from 'react';
-import GithubIcon from "../../public/github-icon.svg";
-
 import Link from "next/link";
 import Image from 'next/image';
 import { useForm } from '@formspree/react';
@@ -53,6 +51,7 @@ const EmailSection = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [formStatus, setFormStatus] = useState(null);
 
   const isFormValid = email && subject && message;
 
@@ -60,8 +59,8 @@ const EmailSection = () => {
     e.preventDefault()
 
     if (!isFormValid) {
-      console.error('Veuillez remplir tous les champs du formulaire.');
-      return;
+      setFormStatus('Veuillez remplir tous les champs du formulaire.');
+      
     }
 
     let data = {
@@ -83,11 +82,13 @@ const EmailSection = () => {
       })
       .then(() => {
         // Réinitialisez les champs du formulaire après la soumission réussie
+        setFormStatus('Message envoyé avec succès!');
         setEmail('');
         setSubject('');
         setMessage('');
       })
       .catch(error => {
+        setFormStatus('Message envoyé avec succès!');
         console.error('Error submitting the form:', error);
       });
 
@@ -103,22 +104,19 @@ const EmailSection = () => {
           {""}
           I am currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I will try my best to get back to you!
         </p>
-        <div className='socials flex flex-row gap-2'>
-          <Link href={"github.com"}>
-            <img src={GithubIcon} alt='Github Icon' />
-          </Link>
-
-        </div>
+        
       </div>
       <form className='flex flex-col grap-6' onSubmit={handleFormSubmit}>
         <div className='mb-6'>
           <label htmlFor="email" className='text-white block mb-2 text-sm font-medium'>
             Your email
           </label>
-          <input type="email"
+          <input 
+          type="email"
             value={email}
             onChange={(e) => { setEmail(e.target.value) }}
-            name="email" id="email"
+            name="email" 
+            id="email"
             className='bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
             placeholder='Enter your email@gmail.com'
           />
@@ -127,10 +125,12 @@ const EmailSection = () => {
           <label htmlFor="Subject" className='text-white block mt-4 text-sm font-medium'>
             Subject
           </label>
-          <input type="text"
+          <input 
+          type="text"
             value={subject}
             onChange={(e) => { setSubject(e.target.value) }}
-            name="subject" id="subject"
+            name="subject" 
+            id="subject"
             className='bg-[#18191E] mt-4 border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
             placeholder='just say hi'
           />
@@ -154,11 +154,10 @@ const EmailSection = () => {
           disabled={!isFormValid}>
           Send Message
         </button>
-        {false && (
-          <p className='text-secondary-500 text-sm mt-2'>
+        {formStatus && <p>{formStatus}</p>}
+          {/* <p className='text-secondary-500 text-sm mt-2'>
             Email sent successfully
-          </p>
-        )}
+          </p> */}
       </form>
     </section>
   )

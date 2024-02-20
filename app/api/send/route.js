@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import nodemailer from "nodemailer";
 
+
 const sendEmail = async (message, email, subject) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -14,12 +15,14 @@ const sendEmail = async (message, email, subject) => {
 
   const mailData = {
     from: process.env.EMAIL,
-    to: email,
+    to: process.env.EMAIL,
     subject: `Message From ${message}`,
     text: subject + " | Sent from: " + email,
     html: `<div>${subject}</div><p>Sent from:
     ${email}</p>`,
   };
+
+  console.log(mailData);
 
   try {
     const emailSent = await transporter.sendMail(mailData);
