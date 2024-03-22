@@ -13,8 +13,7 @@ const projectData = [
         image: "/imgProjects/img1.png",
         alt: "suis img1",
         tag: ["All", "Web"],
-        gitUrl: "/",
-        previewUrl: "/"
+        gitUrl: "/"
     },
     {
         id: 2,
@@ -22,8 +21,7 @@ const projectData = [
         description: "Projet 2 description",
         image: "/imgProjects/img2.png",
         tag: ["All", "web", "Mobile"],
-        gitUrl: "/",
-        previewUrl: "/"
+        gitUrl: "/"
     },
     {
         id: 3,
@@ -31,8 +29,7 @@ const projectData = [
         description: "Projet 3 description",
         image: "/imgProjects/img3.png",
         tag: ["All", "Web"],
-        gitUrl: "/",
-        previewUrl: "/"
+        gitUrl: "/"
     },
     {
         id: 4,
@@ -40,8 +37,7 @@ const projectData = [
         description: "Projet 4 description",
         image: "/imgProjects/img4.png",
         tag: ["All", "Web"],
-        gitUrl: "/",
-        previewUrl: "/"
+        gitUrl: "/"
     },
     {
         id: 5,
@@ -49,8 +45,7 @@ const projectData = [
         description: "Projet 5 description",
         image: "/imgProjects/img5.png",
         tag: ["All", "web", "Mobile"],
-        gitUrl: "/",
-        previewUrl: "/"
+        gitUrl: "/"
     },
     {
         id: 6,
@@ -58,8 +53,7 @@ const projectData = [
         description: "Projet 6 description",
         image: "/imgProjects/img6.png",
         tag: ["All", "Web", "Mobile"],
-        gitUrl: "/",
-        previewUrl: "/"
+        gitUrl: "/"
 
     },
 ]
