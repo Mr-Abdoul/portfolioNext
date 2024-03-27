@@ -48,12 +48,12 @@ const HeroSection = () => {
                     </div>
                 </div>
                 <div className="col-span-5 place-self-center mt-4 lg:mt-0">
-                    <div className='rounded bg-[#181818] w-[200px] h-[200px] lg:w-[300px] lg:h-[300px] relative'>
+                    <div className='rounded bg-[#181818] w-[200px] h-[200px] lg:w-[200px] lg:h-[150px] relative'>
                         <img
                             src="/images/abdoul1.jpg"
                             width={200}
                             height={200}
-                            className='absolute translate  rounded-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+                            className='absolute translate   -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
                             alt="S'affiche quand l'image n'est pas disponible"
                         />
                     </div>

@@ -28,8 +28,8 @@ const Navbar = () => {
                 <Link href={"/"} className='text-2xl md:text-5xl text-white font-semibold'>
                     <Image
                         src="/images/Mr Abdoul.jpg"
-                        width={120}
-                        height={30}
+                        width={100}
+                        height={15}
                         alt='ceci est le nom de Mr Abdoul'
                         className='' />
                 </Link>
