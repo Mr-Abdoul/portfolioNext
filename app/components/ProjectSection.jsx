@@ -72,8 +72,8 @@ const ProjectSection = () => {
     let headersList = {
       Accept: "*/*",
     };
-
-    let response = await fetch("http://localhost:4000/api/send/getTache", {
+    
+    let response = await fetch(`${process.env.URL_BACKEND}/api/send/getTache`, {
       method: "GET",
       headers: headersList,
     });

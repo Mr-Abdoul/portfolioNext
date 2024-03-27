@@ -6,45 +6,6 @@ import { useForm } from '@formspree/react';
 
 
 
-// const handelSubmit = async (e) =>{
-//   e.preventDefault();
-//  console.log(data);
-//   // 
-//   const JSONdata = JSON.stringify(data);
-//   const endpoint = "/api/send";
-//   // from the request for sending data to the server.
-//   const options = {
-//     // the method is POST because we are sending data.
-//     method: 'POST',
-//     // tell the server we're sending JSON.
-//     Headers: {
-//       'Content-Type': 'application.json',
-//     },
-//     // body of the request is the JSON data we created above.
-//     body: JSONdata,
-//   };
-
-//   const response = await fetch(endpoint, options);
-//   const resData = await response.json();
-//   console.log(resData);
-
-//   if (response.status === 200) {
-//     console.log("Message sent.")
-//   }
-// }
-
-// const [state, handleSubmit, reset] = useForm("mleqjqew");
-
-// const handleFormSubmit = async (event) => {
-
-// };
-// let isFormValid = email && subject && message;
-// if (!isFormValid) {
-//   // Affiche un message d'erreur ou effectue une action appropriée
-//   console.error('Veuillez remplir tous les champs du formulaire.');
-//   return;
-// }
-//  disabled={isFormValid}
 
 const EmailSection = () => {
 
