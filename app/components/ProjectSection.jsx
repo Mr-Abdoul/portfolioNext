@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import TabButton from "./TabButton";
+// import dotenv from ""
 
 // const projectData = [
 //   {
@@ -67,26 +68,26 @@ const ProjectSection = () => {
 //   const filteredProjects = data.filter((project) =>
 //     project.tag.includes(tag)
 //   );
-
+// console.log(data);
   const fetchData = async () => {
     let headersList = {
       Accept: "*/*",
     };
     
-    let response = await fetch(`${process.env.URL_BACKEND}/api/send/getTache`, {
+    let response = await fetch(`${process.env.NEXT_PUBLIC_URL_BACKEND}/api/send/getTache`, {
       method: "GET",
-      headers: headersList,
+      headers: headersList
     });
 
     let data = await response.json();
-    setData(data)
+    setData(data);
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  console.log(data);
+  
 
   return (
     <>
