@@ -65,10 +65,8 @@ const ProjectSection = () => {
   const handelTagChange = (newTag) => {
     setTag(newTag);
   };
-//   const filteredProjects = data.filter((project) =>
-//     project.tag.includes(tag)
-//   );
-// console.log(data);
+
+
   const fetchData = async () => {
     let headersList = {
       Accept: "*/*",
