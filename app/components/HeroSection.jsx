@@ -43,9 +43,9 @@ const HeroSection = () => {
                         Always eager to learn and take on new challenges.
                     </p>
                     <div>
-                        <button className='px-6 py-3 w-fullsm w-fit rounded-full mr-4 bg-gradient-to-br from-primary-600 to-secondary-800 hover:bg-slate-200 text-white'>
+                        {/* <button className='px-6 py-3 w-fullsm w-fit rounded-full mr-4 bg-gradient-to-br from-primary-600 to-secondary-800 hover:bg-slate-200 text-white'>
                             Hire Me
-                        </button>
+                        </button> */}
                         <button
                             onClick={handleDownload} // Appel de la fonction pour télécharger le PDF
                             className='px-1 py-1 w-fullsm w-fit rounded-full bg-gradient-to-br from-primary-600 to-secondary-800 hover:bg-slate-800 text-white mt-3'
