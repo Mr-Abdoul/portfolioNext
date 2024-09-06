@@ -95,10 +95,10 @@ const ProjectSection = () => {
       <div className="text-white flex flex-row justify-center items-center grap-2 py-6">
         <ProjectTag
           onClick={handelTagChange}
-          name="All"
+          name="All projects"
           isSelected={tag === "All"}
         />
-        <ProjectTag
+        {/* <ProjectTag
           onClick={handelTagChange}
           name="Web"
           isSelected={tag === "Web"}
@@ -107,7 +107,7 @@ const ProjectSection = () => {
           onClick={handelTagChange}
           name="Mobile"
           isSelected={tag === "Mobile"}
-        />
+        /> */}
       </div>
       <div className="grid md:grid-cols-3 gap-8 md:gap-12">
         {data && data.map((project) => (
